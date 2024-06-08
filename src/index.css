@@ -1,0 +1,48 @@
+:root {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+
+  color: #333;
+  background-color: #fff;
+
+  font-synthesis: auto;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

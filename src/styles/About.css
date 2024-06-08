@@ -1,0 +1,41 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-container h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .about-container p {
+    margin-bottom: 15px;
+  }
+  
+  .about-container ul {
+    margin-bottom: 15px;
+  }
+  
+  .about-container li {
+    margin-bottom: 5px;
+  }
+  
+  .acknowledgment-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .acknowledgment-logos img {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+  }
