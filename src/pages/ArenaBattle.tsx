@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 
-import React from 'react';
+
 
 function ArenaBattle() {
   return (
