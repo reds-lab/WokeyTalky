@@ -1,0 +1,44 @@
+/* Citation.css */
+
+.citation {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .citation p {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .citation pre {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
+  .citation code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  .citation button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .citation button:hover {
+    background-color: #0056b3;
+  }
+  
+  .citation button:active {
+    background-color: #004085;
+  }

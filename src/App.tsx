@@ -8,20 +8,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <Router>
+    <>
       <Header/>
-      <>
-        <Routes>
-          <Route path="/" element={<Home />} >
-            <Route path="/" element={<ArenaBattle />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/arena-battle" element={<ArenaBattle />} />
-          </Route>
-        </Routes>
-      </>
+      <Home/>
       <Footer/>
-    </Router>
+    </>
   );
 }
 

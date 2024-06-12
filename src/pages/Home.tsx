@@ -1,13 +1,23 @@
-// src/pages/Home.jsx
-
-import {Outlet} from "react-router-dom";
-function Home() {
+import React from 'react';
+import QuickGlance from './QuickGlance';
+import Overview from './Overview';
+import Results from './Results';
+import Examples from './Examples';
+import EthicsAndDisclosure from './Ethics';
+import Hero from './Hero';
+import Citation from './Citation';
+const Home: React.FC = () => {
   return (
-    <div>
-      <p></p>
-      <Outlet/>
-    </div>
+    <>
+      <Hero/>
+      <QuickGlance />
+      <Overview />
+      <Results />
+      <Examples />
+      <EthicsAndDisclosure />
+      <Citation/>
+    </>
   );
-}
+};
 
 export default Home;
