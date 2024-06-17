@@ -1019,8 +1019,6 @@
             },
         };
 
-        
-        
 
         function typeWriterEffect(text, container, speed = 10) {
             let i = 0;
@@ -1034,10 +1032,10 @@
             typeWriter();
         };
 
-        function displayResponses1(option, modelOutputId, displayOptions) {
+        function displayResponses(option, modelOutputId, displayOptions) {
             const modelOutputElement = document.getElementById(modelOutputId);
             modelOutputElement.innerHTML = ''; // Clear previous contents
-            const selectedResponses = advDisplayOptions[option.toString()];
+            const selectedResponses = displayOptions[option.toString()];
             const promptText = selectedResponses.prompt;
             const modelTexts = selectedResponses;
             // Display the user prompt first
@@ -1046,16 +1044,21 @@
             userPrompt.innerHTML = "<strong>User:</strong> " + promptText;
             modelOutputElement.appendChild(userPrompt);
             // Iterate over the model responses
+            let index = 0;
             Object.keys(modelTexts).forEach(modelName => {
                 if (modelName !== "prompt") {  // Exclude the prompt key from the response iteration
                     let modelResponse = document.createElement('div');
                     modelResponse.className = 'assistantMessage';
+                    if (index === 0) {
+                        modelResponse.style.backgroundColor = '#06d6a0'; //GREEN COLOR
+                    } else {
+                        modelResponse.style.backgroundColor = '#ef476f'; //RED COLOR
+                    }
                     modelOutputElement.appendChild(modelResponse);
                     let responseContent = modelTexts[modelName];
                     let iconPath = modelIcons[modelName];
                     let responseText = `<img src="${iconPath}" alt="${modelName}" style="vertical-align: middle; width: 24px; height: 24px; margin-right: 5px;"><strong>${modelName}:</strong> `;
                     modelResponse.innerHTML = responseText;
-
                     if (responseContent.response.startsWith('\n<img')) {
                         // If the response is an image, display it immediately without typing effect
                         modelResponse.innerHTML += responseContent.response;
@@ -1063,42 +1066,11 @@
                         // If the response is text, apply the typing effect
                         typeWriterEffect(responseContent.response, modelResponse);
                     }
+                    index++;
                 }
             });
-        };
-        
-        function displayResponses2(option, modelOutputId) {
-            const modelOutputElement = document.getElementById(modelOutputId);
-            modelOutputElement.innerHTML = ''; // Clear previous contents
-            const selectedResponses = hexDisplayOptions[option.toString()];
-            const promptText = selectedResponses.prompt;
-            const modelTexts = selectedResponses;
-            // Display the user prompt first
-            let userPrompt = document.createElement('div');
-            userPrompt.className = 'userMessage';
-            userPrompt.innerHTML = "<strong>User:</strong> " + promptText;
-            modelOutputElement.appendChild(userPrompt);
-            // Iterate over the model responses
-            Object.keys(modelTexts).forEach(modelName => {
-                if (modelName !== "prompt") {  // Exclude the prompt key from the response iteration
-                    let modelResponse = document.createElement('div');
-                    modelResponse.className = 'assistantMessage';
-                    modelOutputElement.appendChild(modelResponse);
-                    let responseContent = modelTexts[modelName];
-                    let iconPath = modelIcons[modelName];
-                    let responseText = `<img src="${iconPath}" alt="${modelName}" style="vertical-align: middle; width: 24px; height: 24px; margin-right: 5px;"><strong>${modelName}:</strong> `;
-                    modelResponse.innerHTML = responseText;
-
-                    if (responseContent.response.startsWith('\n<img')) {
-                        // If the response is an image, display it immediately without typing effect
-                        modelResponse.innerHTML += responseContent.response;
-                    } else {
-                        // If the response is text, apply the typing effect
-                        typeWriterEffect(responseContent.response, modelResponse);
-                    }
-                }
-            });
-        };
+        }
+    
     </script>
 
 </head>
@@ -1700,7 +1672,7 @@
                 <div id="outputAndControlsContainer1">
                     <div id="controlsContainer1">
                         <div>
-                            <select id="responseOption" onchange="displayResponses1(this.value, 'modelOutput1', advDisplayOptions)">
+                            <select id="responseOption" onchange="displayResponses(this.value, 'modelOutput1', advDisplayOptions)">
                                 <option value="" disabled selected>Please click to select</option>
                                 <option value="1">WokeyTalky ADV-Bench #1</option>
                                 <option value="2">WokeyTalky ADV-Bench #2</option>
@@ -1734,7 +1706,7 @@
                 <div id="outputAndControlsContainer1">
                     <div id="controlsContainer1">
                         <div>
-                            <select id="responseOption" onchange="displayResponses2(this.value, 'modelOutput2', hexDisplayOptions)">
+                            <select id="responseOption" onchange="displayResponses(this.value, 'modelOutput2', hexDisplayOptions)">
                                 <option value="" disabled selected>Please click to select</option>
                                 <option value="1">HEx-PHI Category 1: Illegal Activites</option>
                                 <option value="2">HEx-PHI Category 2: Honest and direct</option>
