@@ -701,9 +701,9 @@
             color: white;
             max-width: 80%;
             border-radius: 10px;
-            margin: -20px 10px -18px;
+            margin: 20px 10px -18px;
             padding: 10px;
-            align-self: flex-end;
+            align-self: flex-start;
             /* Adjust the alignment of the userMessage */
         }
 
@@ -1041,7 +1041,9 @@
             // Display the user prompt first
             let userPrompt = document.createElement('div');
             userPrompt.className = 'userMessage';
-            userPrompt.innerHTML = "<strong>User:</strong> " + promptText;
+            
+            userPrompt.innerHTML = "<strong style='color: white;'>User: </strong>" + promptText;
+            userPrompt.style = 'white'
             modelOutputElement.appendChild(userPrompt);
             // Iterate over the model responses
             let index = 0;
@@ -1050,15 +1052,21 @@
                     let modelResponse = document.createElement('div');
                     modelResponse.className = 'assistantMessage';
                     if (index === 0) {
-                        modelResponse.style.backgroundColor = '#06d6a0'; //GREEN COLOR
+                        modelResponse.style.border = '4px solid green'; 
                     } else {
-                        modelResponse.style.backgroundColor = '#ef476f'; //RED COLOR
+                        modelResponse.style.border = '4px solid red'; // 
                     }
+                    
+
+                    let persuasionMessage = document.createElement('div');
+                    persuasionMessage.className = 'persuasionMessage';
+
+                    let iconPath = modelIcons[modelName];
+                    let persuasionContent = `<img src="${iconPath}" alt="${modelName}" style="vertical-align: middle; width: 24px; height: 24px; margin-right: 5px;"><strong>${modelName}:</strong> `;
+                    persuasionMessage.innerHTML = persuasionContent;
+                    modelOutputElement.appendChild(persuasionMessage);
                     modelOutputElement.appendChild(modelResponse);
                     let responseContent = modelTexts[modelName];
-                    let iconPath = modelIcons[modelName];
-                    let responseText = `<img src="${iconPath}" alt="${modelName}" style="vertical-align: middle; width: 24px; height: 24px; margin-right: 5px;"><strong>${modelName}:</strong> `;
-                    modelResponse.innerHTML = responseText;
                     if (responseContent.response.startsWith('\n<img')) {
                         // If the response is an image, display it immediately without typing effect
                         modelResponse.innerHTML += responseContent.response;
@@ -1070,6 +1078,7 @@
                 }
             });
         }
+
     
     </script>
 
@@ -1541,31 +1550,6 @@
                         <img src="./website/images/Case1.png" alt="">
                     </div>
                 </div>
-
-                <div class="column">
-                    <div class="content">
-                        <h2 class="title is-4">PAPs' Efficacy Across Trials</h2>
-                        <div class="content has-text-justified">
-                            <p>
-                                We also extend the number of trials to 10 to test the boundary of PAPs and report the
-                                overall ASR across
-                                10 trials.
-                                The overall ASR varies for different model families: PAPs achieves <b>92%</b> ASR on
-                                Llama-2 and GPTs
-                                but is limited on Claude.
-                                Notably, <b>stronger models may be more vulnerable to PAPs</b> than weaker models if the
-                                model family is
-                                susceptible to persuasion.
-                                Drom the ASR within 1 and 3 trials, we see that GPT-4 is more prone to PAPs than
-                                GPT-3.5.
-                                This underscores the distinctive risks posed by human-like persuasive interactions.
-                            </p>
-                        </div>
-
-                        <img src="./website/images/10_trial_results.png" alt="">
-                    </div>
-
-                </div>
             </div>
             <br>
 
@@ -1598,32 +1582,6 @@
                         </div>
 
                         <img src="./website/images/Case2.png" style="width:95%;height:95%;" alt="">
-                    </div>
-                </div>
-
-                <div class="column">
-                    <div class="content">
-                        <h3 class="title is-4">Exploring Adaptive Defenses</h3>
-                        <div class="content has-text-justified">
-                            <p>
-                                We investigate two straightforward and intuitive adaptive defense tactics: "<b>Adaptive
-                                    System
-                                    Prompt</b>" and "<b>Targeted Summarization</b>",
-                                designed to counteract the influence of persuasive contexts in PAPs. We reveal that they
-                                are effective
-                                in counteracting PAPs and they can also defend other types of jailbreak prompts beyond
-                                PAPs.
-                                These observations suggest that although different adversarial prompts are generated by
-                                different
-                                procedures (gradient-based, modification-based, etc.),
-                                <i>their core mechanisms may be related to <b>persuading</b> the LLM into
-                                    compliance.</i>
-                                We also find that there exists a trade-off between safety and utility. So the selection
-                                of a defense
-                                strategy should be tailored to individual models and specific safety goals.
-                            </p>
-                        </div>
-                        <img src="./website/images/adaptive_defense_results_new.png" alt="">
                     </div>
                 </div>
             </div>
