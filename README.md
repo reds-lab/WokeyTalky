@@ -91,15 +91,11 @@ Now, you might think that such a high success rate is the peak of our findings, 
 ### **Case Study I**
 
 <p align="center">
-<img src="./assets/stage_1_scan_new_new.png" alt="broad scan" width="90%"/>
+<img src="./assets/Case1.png" alt="broad scan" width="90%"/>
 </p>
 <p align="center">
 <font size=3 >Broad scan results on GPT-3.5 over OpenAI's 14 risk categories.</font>
 </p>
-
-> We show the ***PAP Success Ratio*** (%), the percentage of PAPs that elicit outputs with the highest harmfulness score of 5 judged by [GPT-4 Judge](https://llm-tuning-safety.github.io/index.html). Each cell is a risk-technique pair, and the total number of PAPs for each cell is 60 (3 plain queries × 20 PAP variants). The top 5 most effective techniques for each risk category are annotated in red or white (results over 30% are emphasized in white). For clarity, risk categories and techniques are organized from **left to right, top to bottom** by decreasing the average *PAP Success Ratio*. Left categories (e.g., Fraud/deception) are more susceptible to persuasion, and top techniques (e.g., Logical Appeal) are more effective. The bottom row shows the results of plain queries without persuasion.
-
-We find persuasion effectively jailbreaks GPT-3.5 across all 14 risk categories. The interplay between risk categories and persuasion techniques highlights the challenges in addressing such user-invoked risks from persuasion. This risk, especially when involving multi-technique and multi-turn communication, emphasizes the urgency for further investigation.
 
 <br>
 
@@ -107,18 +103,13 @@ We find persuasion effectively jailbreaks GPT-3.5 across all 14 risk categories.
 
 
 <p align="center">
-<img src="./assets/10_trial_results.png" alt="10_trail" width="50%"/>
+<img src="./assets/Case2.png" alt="broad scan" width="90%"/>
+</p>
+<p align="center">
+<font size=3 >Broad scan results on GPT-3.5 over OpenAI's 14 risk categories.</font>
 </p>
 
 We also extend the number of trials to 10 to test the boundary of PAPs and report the overall ASR across 10 trials. The overall ASR varies for different model families: PAPs achieves **92%** ASR on Llama-2 and GPTs but is limited on Claude. Notably, **stronger models may be more vulnerable to PAPs** than weaker models if the model family is susceptible to persuasion. Drom the ASR within 1 and 3 trials, we see that GPT-4 is more prone to PAPs than GPT-3.5. This underscores the distinctive risks posed by human-like persuasive interactions.
-
-<br>
-
-### Re-evaluating Existing Defenses and Exploring Adaptive Defenses
-
-<p align="center">
-<img src="./assets/existing_defense_results.png" alt="existing_defense" width="40%"/>
-</p>
 
 
 
