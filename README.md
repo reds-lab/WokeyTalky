@@ -62,13 +62,8 @@ Now, you might think that such a high success rate is the peak of our findings, 
 <br>
 
 ## A Quick Glance
-<div>
-<iframe title="HEx-PHI Rejection Rates" aria-label="Grouped Columns" id="datawrapper-chart-3vZpY" src="https://datawrapper.dwcdn.net/3vZpY/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="568" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-                </script>
-                <iframe title="ADV-Bench Rejection Rates" aria-label="Grouped Columns" id="datawrapper-chart-0evQd" src="https://datawrapper.dwcdn.net/0evQd/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="565" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-                </script>
-              </div>
-
+<img src="./assets/0evQd-adv-bench-rejection-rates.png" alt="generation method" width="90%"/>
+<img src="./assets/3vZpY-hex-phi-rejection-rates.png" alt="generation method" width="90%"/>
 <br>
 <br>
 
