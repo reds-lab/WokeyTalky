@@ -18,10 +18,10 @@ Misguided Safety Refusal in LLMs </h1>
 </p>
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://arxiv.org/abs/2401.06373" target="_blank" style="text-decoration: none;">[arXiv] (TBD </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://chats-lab.github.io/persuasive_jailbreaker/" target="_blank" style="text-decoration: none;">[Project Page]</a>
-    <a href="https://arxiv.org/abs/2401.06373" target="_blank" style="text-decoration: none;">[HuggingFace]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://chats-lab.github.io/persuasive_jailbreaker/" target="_blank" style="text-decoration: none;">[PyPI]</a>
+    <a href="" target="_blank" style="text-decoration: none;">[arXiv] (TBD </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://ruoxi-jia-group.github.io/WokeyTalky/" target="_blank" style="text-decoration: none;">[Project Page]</a>
+    <a href="https://huggingface.co/datasets/redslabvt/WokeyTalky" target="_blank" style="text-decoration: none;">[HuggingFace]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://pypi.org/project/WokeyTalky/" target="_blank" style="text-decoration: none;">[PyPI]</a>
 </b>
 </p>
 
