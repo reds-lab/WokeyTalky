@@ -27,12 +27,37 @@ Misguided Safety Refusal in LLMs </h1>
 
 ------------
 ## Quickstart
-```python
+### Install (Option #1)
+
+To quickly use WokeyTalky in a notebook or python code, you can install our Pipeline with `pip`:
+
+```bash
 pip install WokeyTalky
 ```
 
+Further documentation
 
-## Reproducibility and Codes
+### Use our original code
+
+Go step by step through our WokeyTalky process with the original code used to generate our HuggingFace dataset
+Clone or download this repository:
+
+```bash
+git clone git@github.com:reds-lab/WokeyTalky.git
+```
+
+Install the dependencies:
+
+```bash
+conda install env.yml
+```
+
+Then run TimberTrek:
+
+```bash
+./start_pipeline.sh
+```
+
 
 
 
@@ -121,20 +146,14 @@ We also extend the number of trials to 10 to test the boundary of PAPs and repor
 <br>
 <br>
 
-## Citation
-If you find this useful in your research, please consider citing:
+## License
 
-```
-[BLANK ARXIV CITATION TODO]
-```
+The software is available under the [MIT License](https://github.com/poloclub/timbertrek/blob/master/LICENSE).
 
-<br><br>
+## Contact
+
+If you have any questions, feel free to [open an issue](https://github.com/reds-lab/WokeyTalky/issues/new) or contact [Adam Nguyen]().
 
 ## Special Thanks to [BLANK]
 
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=CHATS-lab/persuasive_jailbreaker&type=Date)](https://star-history.com/#CHATS-lab/persuasive_jailbreaker&Date)
 
