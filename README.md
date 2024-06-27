@@ -25,6 +25,17 @@ Misguided Safety Refusal in LLMs </h1>
 </b>
 </p>
 
+
+## Notebook Demos
+
+Try our notebooks on your  (e.g. Jupyter Notebook/Lab, Google Colab, and VS Code Notebook).
+
+Check out four notebook demos below.
+
+|Jupyter Lite|Binder|Google Colab| Github Jupyter File |
+|:---:|:---:|:---:| :---: |
+|[![Lite](https://gist.githubusercontent.com/xiaohk/9b9f7c8fa162b2c3bc3251a5c9a799b2/raw/a7fca1d0a2d62c2b49f60c0217dffbd0fe404471/lite-badge-launch-small.svg)](https://poloclub.github.io/timbertrek/notebook)|[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/poloclub/timbertrek/master?urlpath=lab/tree/notebook-widget/example/campas.ipynb)|[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]()| [![Try on your system]()]()| 
+
 ------------
 ## Quickstart
 ### Install (Option #1)
@@ -52,7 +63,7 @@ Install the dependencies:
 conda install env.yml
 ```
 
-Then run TimberTrek:
+Then run WokeyTalky's main bash script:
 
 ```bash
 ./start_pipeline.sh
@@ -76,13 +87,7 @@ Then run TimberTrek:
 
 Now, you might think that such a high success rate is the peak of our findings, but there's more. In a surprising twist, we found that **more advanced models like GPT-4 are more vulnerable** to persuasive adversarial prompts (PAPs). What's more, **adaptive defenses** crafted to neutralize these PAPs also provide effective protection against a spectrum of other attacks (e.g., [GCG](https://llm-attacks.org/), [Masterkey](https://sites.google.com/view/ndss-masterkey), or [PAIR](https://jailbreaking-llms.github.io/)).
 
-<p align="center">
-<img src="./assets/persuasion_taxonomy.png" alt="persuasion_taxonomy" width="90%"/>
-</p>
-<p align="center">
-<font size=3 >A systematic taxonomy of persuasion techniques.</font>
-</p>
-<br>
+
 
 <br>
 
@@ -95,21 +100,6 @@ Now, you might think that such a high success rate is the peak of our findings, 
 ## ***Persuasive Adversarial Prompt (PAP)***
 
 > We *humanize and persuade LLMs as human-like communicators*, and propose interpretable ***Persuasive Adversarial Prompt (PAP)***. PAP seamlessly weaves persuasive techniques into jailbreak prompt construction, which highlights the risks associated with more complex and nuanced human-like communication to advance AI safety.
-
-<br>
-
-<p align="center">
-<img src="./assets/auto_attack_new_weiyan.png" alt="generation method" width="90%"/>
-</p>
-<p align="center">
-<font size=3 >Overview of the taxonomy-guided Persuasive Adversarial Prompt (PAP) generation method.</font>
-</p>
-
-<br>
-
-**A. *Persuasive Paraphraser* Training: Step 1** of this phase is to obtain training data, where we apply various methods (e.g., in-context prompting, fine-tuned paraphraser, etc) and the persuasion taxonomy to paraphrase a plain harmful query into high-quality PAP as training data. Then, in **Step 2,** we use the training data to fine-tune a *persuasive paraphraser* that can paraphrase harmful queries stably. 
-
-**B. *Persuasive Paraphraser* Deployment: Step 1** is to use the fine-tuned *persuasive paraphraser* to generate PAP for new harmful queries with a specified persuasion technique. Then, in **Step 2,** we will use a [GPT4-Judge](https://llm-tuning-safety.github.io/index.html) to evaluate the harmfulness of the resultant output from the target model. 
 
 <br>
 
