@@ -115,26 +115,38 @@ Now, you might think that such a high success rate is the peak of our findings, 
 
 ### **Case Study I**
 
-<p align="center">
-<img src="./assets/Case1.png" alt="broad scan" width="90%"/>
-</p>
-<p align="center">
-<font size=3 >Broad scan results on GPT-3.5 over OpenAI's 14 risk categories.</font>
-</p>
-
+<div class="columns is-centered">
+    <div class="column">
+        <div class="content">
+            <h2 class="title is-4">Case Study 1</h2>
+            <div class="content has-text-justified">
+                <p>
+                    The adaptive nature of WOKEYTALKY enables exciting new use cases and functionalities beyond serving as a static benchmark. Through this case study, we demonstrate that dynamically generated “Woke” data from WOKEYTALKY provides timely identification of safety mechanism-dependent incorrect refusals. We fine-tuned a helpfulness-focused model, Mistral-7B-v0.1, on 50 random samples from AdvBench, introducing safety refusal behaviors. The evaluation compared the model’s safety on AdvBench samples and incorrect refusal rate on WOKEYTALKY data versus static benchmarks like XSTest.
+                </p>
+            </div>
+            <br>
+            <img src="./assets/Case1.png" alt="Case Study 1 Image">
+        </div>
+    </div>
+</div>
 <br>
 
 ### **Case Study II**
 
+<div class="columns is-centered">
+    <div class="column">
+        <div class="content">
+            <h3 class="title is-4">Case Study 2</h3>
+            <div class="content has-text-justified">
+                <p>
+                    In this case study, we explore using WOKEYTALKY data for few-shot mitigation of incorrect refusals. We split the WOKEYTALKY and XSTest-63 data into train/test sets and compared different fine-tuning methods. Our findings show that incorporating WOKEYTALKY samples effectively mitigates wrong refusals while maintaining high safety refusal rates. Model 1, using WOKEYTALKY data, demonstrated generalizable mitigation on unseen data, outperforming models trained with larger benign QA samples or XSTest samples. This highlights the potential of WOKEYTALKY data in balancing performance, safety, and incorrect refusals in AI safety applications.
+                </p>
+            </div>
+            <img src="./assets/Case2.png" style="width:95%;height:95%;" alt="Case Study 2 Image">
+        </div>
+    </div>
+</div>
 
-<p align="center">
-<img src="./assets/Case2.png" alt="broad scan" width="90%"/>
-</p>
-<p align="center">
-<font size=3 >Broad scan results on GPT-3.5 over OpenAI's 14 risk categories.</font>
-</p>
-
-We also extend the number of trials to 10 to test the boundary of PAPs and report the overall ASR across 10 trials. The overall ASR varies for different model families: PAPs achieves **92%** ASR on Llama-2 and GPTs but is limited on Claude. Notably, **stronger models may be more vulnerable to PAPs** than weaker models if the model family is susceptible to persuasion. Drom the ASR within 1 and 3 trials, we see that GPT-4 is more prone to PAPs than GPT-3.5. This underscores the distinctive risks posed by human-like persuasive interactions.
 
 
 
@@ -142,13 +154,21 @@ We also extend the number of trials to 10 to test the boundary of PAPs and repor
 
 ## Ethics and Disclosure
 
-[BLANK TODO]
+The development and application of WOKEYTALKY have been guided by a commitment to ethical standards and transparency. The pipeline's primary aim is to enhance the safety and reliability of AI systems by addressing the issue of incorrect refusals and improving model alignment with human values. We acknowledge the potential implications of our work in various domains and have taken measures to ensure that our research is conducted responsibly.
+
+Our methodology includes the use of red-teaming datasets specifically designed to expose and mitigate safety risks. These datasets, such as HEx-PHI and AdvBench, are employed with the intention of identifying and correcting spurious features that lead to misguided refusals in language models. All data used in our experiments is sourced from publicly available benchmarks, and no private or sensitive data is included.
+
+We recognize that the dynamic generation of test cases (Woke-data) and the evaluation of models on these cases can raise concerns about the potential misuse of our findings. To mitigate such risks, we have ensured that all experimental procedures and results are documented transparently, and our code and methodologies are made available for peer review and verification. We encourage collaboration and open dialogue within the research community to refine and improve our approaches.
+
+In addition, we are committed to the principles of fairness, accountability, and transparency. Our evaluations aim to highlight the importance of context-aware AI systems that can distinguish between harmful and benign requests accurately. We stress that our work should not be used to bypass or undermine safety mechanisms but rather to strengthen them.
+
+Finally, we disclose that the WOKEYTALKY project has been supported by funding from [specific funding sources, if any], and we have adhered to the ethical guidelines and standards set forth by our institution. We invite feedback and collaboration from the broader AI research community to ensure that our contributions to AI safety are both impactful and responsibly managed.
 <br>
 <br>
 
 ## License
 
-The software is available under the [MIT License](https://github.com/poloclub/timbertrek/blob/master/LICENSE).
+The software is available under the [MIT License](https://github.com/reds-lab/WokeyTalky/blob/master/LICENSE).
 
 ## Contact
 

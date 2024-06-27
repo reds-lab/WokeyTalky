@@ -12,501 +12,7 @@
         Towards Scalable Evaluation of
         Misguided Safety Refusal in LLMs</title>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-    </script>
-
-
-    <style type="text/css">
-        svg:not(:root).svg-inline--fa {
-            overflow: visible
-        }
-
-        .svg-inline--fa {
-            display: inline-block;
-            font-size: inherit;
-            height: 1em;
-            overflow: visible;
-            vertical-align: -.125em
-        }
-
-        .svg-inline--fa.fa-lg {
-            vertical-align: -.225em
-        }
-
-        .svg-inline--fa.fa-w-1 {
-            width: .0625em
-        }
-
-        .svg-inline--fa.fa-w-2 {
-            width: .125em
-        }
-
-        .svg-inline--fa.fa-w-3 {
-            width: .1875em
-        }
-
-        .svg-inline--fa.fa-w-4 {
-            width: .25em
-        }
-
-        .svg-inline--fa.fa-w-5 {
-            width: .3125em
-        }
-
-        .svg-inline--fa.fa-w-6 {
-            width: .375em
-        }
-
-        .svg-inline--fa.fa-w-7 {
-            width: .4375em
-        }
-
-        .svg-inline--fa.fa-w-8 {
-            width: .5em
-        }
-
-        .svg-inline--fa.fa-w-9 {
-            width: .5625em
-        }
-
-        .svg-inline--fa.fa-w-10 {
-            width: .625em
-        }
-
-        .svg-inline--fa.fa-w-11 {
-            width: .6875em
-        }
-
-        .svg-inline--fa.fa-w-12 {
-            width: .75em
-        }
-
-        .svg-inline--fa.fa-w-13 {
-            width: .8125em
-        }
-
-        .svg-inline--fa.fa-w-14 {
-            width: .875em
-        }
-
-        .svg-inline--fa.fa-w-15 {
-            width: .9375em
-        }
-
-        .svg-inline--fa.fa-w-16 {
-            width: 1em
-        }
-
-        .svg-inline--fa.fa-w-17 {
-            width: 1.0625em
-        }
-
-        .svg-inline--fa.fa-w-18 {
-            width: 1.125em
-        }
-
-        .svg-inline--fa.fa-w-19 {
-            width: 1.1875em
-        }
-
-        .svg-inline--fa.fa-w-20 {
-            width: 1.25em
-        }
-
-        .svg-inline--fa.fa-pull-left {
-            margin-right: .3em;
-            width: auto
-        }
-
-        .svg-inline--fa.fa-pull-right {
-            margin-left: .3em;
-            width: auto
-        }
-
-        .svg-inline--fa.fa-border {
-            height: 1.5em
-        }
-
-        .svg-inline--fa.fa-li {
-            width: 2em
-        }
-
-        .svg-inline--fa.fa-fw {
-            width: 1.25em
-        }
-
-        .fa-layers svg.svg-inline--fa {
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0
-        }
-
-        .fa-layers {
-            display: inline-block;
-            height: 1em;
-            position: relative;
-            text-align: center;
-            vertical-align: -.125em;
-            width: 1em
-        }
-
-        .fa-layers svg.svg-inline--fa {
-            -webkit-transform-origin: center center;
-            transform-origin: center center
-        }
-
-        .fa-layers-counter,
-        .fa-layers-text {
-            display: inline-block;
-            position: absolute;
-            text-align: center
-        }
-
-        .fa-layers-text {
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            -webkit-transform-origin: center center;
-            transform-origin: center center
-        }
-
-        .fa-layers-counter {
-            background-color: #ff253a;
-            border-radius: 1em;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            color: #fff;
-            height: 1.5em;
-            line-height: 1;
-            max-width: 5em;
-            min-width: 1.5em;
-            overflow: hidden;
-            padding: .25em;
-            right: 0;
-            text-overflow: ellipsis;
-            top: 0;
-            -webkit-transform: scale(.25);
-            transform: scale(.25);
-            -webkit-transform-origin: top right;
-            transform-origin: top right
-        }
-
-        .fa-layers-bottom-right {
-            bottom: 0;
-            right: 0;
-            top: auto;
-            -webkit-transform: scale(.25);
-            transform: scale(.25);
-            -webkit-transform-origin: bottom right;
-            transform-origin: bottom right
-        }
-
-        .fa-layers-bottom-left {
-            bottom: 0;
-            left: 0;
-            right: auto;
-            top: auto;
-            -webkit-transform: scale(.25);
-            transform: scale(.25);
-            -webkit-transform-origin: bottom left;
-            transform-origin: bottom left
-        }
-
-        .fa-layers-top-right {
-            right: 0;
-            top: 0;
-            -webkit-transform: scale(.25);
-            transform: scale(.25);
-            -webkit-transform-origin: top right;
-            transform-origin: top right
-        }
-
-        .fa-layers-top-left {
-            left: 0;
-            right: auto;
-            top: 0;
-            -webkit-transform: scale(.25);
-            transform: scale(.25);
-            -webkit-transform-origin: top left;
-            transform-origin: top left
-        }
-
-        .fa-lg {
-            font-size: 1.3333333333em;
-            line-height: .75em;
-            vertical-align: -.0667em
-        }
-
-        .fa-xs {
-            font-size: .75em
-        }
-
-        .fa-sm {
-            font-size: .875em
-        }
-
-        .fa-1x {
-            font-size: 1em
-        }
-
-        .fa-2x {
-            font-size: 2em
-        }
-
-        .fa-3x {
-            font-size: 3em
-        }
-
-        .fa-4x {
-            font-size: 4em
-        }
-
-        .fa-5x {
-            font-size: 5em
-        }
-
-        .fa-6x {
-            font-size: 6em
-        }
-
-        .fa-7x {
-            font-size: 7em
-        }
-
-        .fa-8x {
-            font-size: 8em
-        }
-
-        .fa-9x {
-            font-size: 9em
-        }
-
-        .fa-10x {
-            font-size: 10em
-        }
-
-        .fa-fw {
-            text-align: center;
-            width: 1.25em
-        }
-
-        .fa-ul {
-            list-style-type: none;
-            margin-left: 2.5em;
-            padding-left: 0
-        }
-
-        .fa-ul>li {
-            position: relative
-        }
-
-        .fa-li {
-            left: -2em;
-            position: absolute;
-            text-align: center;
-            width: 2em;
-            line-height: inherit
-        }
-
-        .fa-border {
-            border: solid .08em #eee;
-            border-radius: .1em;
-            padding: .2em .25em .15em
-        }
-
-        .fa-pull-left {
-            float: left
-        }
-
-        .fa-pull-right {
-            float: right
-        }
-
-        .fa.fa-pull-left,
-        .fab.fa-pull-left,
-        .fal.fa-pull-left,
-        .far.fa-pull-left,
-        .fas.fa-pull-left {
-            margin-right: .3em
-        }
-
-        .fa.fa-pull-right,
-        .fab.fa-pull-right,
-        .fal.fa-pull-right,
-        .far.fa-pull-right,
-        .fas.fa-pull-right {
-            margin-left: .3em
-        }
-
-        .fa-spin {
-            -webkit-animation: fa-spin 2s infinite linear;
-            animation: fa-spin 2s infinite linear
-        }
-
-        .fa-pulse {
-            -webkit-animation: fa-spin 1s infinite steps(8);
-            animation: fa-spin 1s infinite steps(8)
-        }
-
-        @-webkit-keyframes fa-spin {
-            0% {
-                -webkit-transform: rotate(0);
-                transform: rotate(0)
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg)
-            }
-        }
-
-        @keyframes fa-spin {
-            0% {
-                -webkit-transform: rotate(0);
-                transform: rotate(0)
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-                transform: rotate(360deg)
-            }
-        }
-
-        .fa-rotate-90 {
-            -webkit-transform: rotate(90deg);
-            transform: rotate(90deg)
-        }
-
-        .fa-rotate-180 {
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg)
-        }
-
-        .fa-rotate-270 {
-            -webkit-transform: rotate(270deg);
-            transform: rotate(270deg)
-        }
-
-        .fa-flip-horizontal {
-            -webkit-transform: scale(-1, 1);
-            transform: scale(-1, 1)
-        }
-
-        .fa-flip-vertical {
-            -webkit-transform: scale(1, -1);
-            transform: scale(1, -1)
-        }
-
-        .fa-flip-both,
-        .fa-flip-horizontal.fa-flip-vertical {
-            -webkit-transform: scale(-1, -1);
-            transform: scale(-1, -1)
-        }
-
-        :root .fa-flip-both,
-        :root .fa-flip-horizontal,
-        :root .fa-flip-vertical,
-        :root .fa-rotate-180,
-        :root .fa-rotate-270,
-        :root .fa-rotate-90 {
-            -webkit-filter: none;
-            filter: none
-        }
-
-        .fa-stack {
-            display: inline-block;
-            height: 2em;
-            position: relative;
-            width: 2.5em
-        }
-
-        .fa-stack-1x,
-        .fa-stack-2x {
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            top: 0
-        }
-
-        .svg-inline--fa.fa-stack-1x {
-            height: 1em;
-            width: 1.25em
-        }
-
-        .svg-inline--fa.fa-stack-2x {
-            height: 2em;
-            width: 2.5em
-        }
-
-        .fa-inverse {
-            color: #fff
-        }
-
-        .sr-only {
-            border: 0;
-            clip: rect(0, 0, 0, 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px
-        }
-
-        .sr-only-focusable:active,
-        .sr-only-focusable:focus {
-            clip: auto;
-            height: auto;
-            margin: 0;
-            overflow: visible;
-            position: static;
-            width: auto
-        }
-
-        .svg-inline--fa .fa-primary {
-            fill: var(--fa-primary-color, currentColor);
-            opacity: 1;
-            opacity: var(--fa-primary-opacity, 1)
-        }
-
-        .svg-inline--fa .fa-secondary {
-            fill: var(--fa-secondary-color, currentColor);
-            opacity: .4;
-            opacity: var(--fa-secondary-opacity, .4)
-        }
-
-        .svg-inline--fa.fa-swap-opacity .fa-primary {
-            opacity: .4;
-            opacity: var(--fa-secondary-opacity, .4)
-        }
-
-        .svg-inline--fa.fa-swap-opacity .fa-secondary {
-            opacity: 1;
-            opacity: var(--fa-primary-opacity, 1)
-        }
-
-        .svg-inline--fa mask .fa-primary,
-        .svg-inline--fa mask .fa-secondary {
-            fill: #000
-        }
-
-        .fad.fa-inverse {
-            color: #fff
-        }
-    </style>
     <link href="./website/css" rel="stylesheet">
 
     <link rel="stylesheet" href="./website/bootstrap.min.css">
@@ -517,6 +23,7 @@
     <link rel="stylesheet" href="./website/academicons.min.css">
     <link rel="stylesheet" href="./website/index.css">
     <link rel="icon" href="./website/images/speak-no-evil-monkey_1f64a.gif">
+    <link rel="stylesheet" type="text/css" href="./website/website.css">
 
     <script src="./website/select.js"></script>
     <script src="./website/bootstrap.min.js"></script>
@@ -525,249 +32,16 @@
     <script src="./website/bulma-carousel.min.js.下载"></script>
     <script src="./website/bulma-slider.min.js.下载"></script>
     <script src="./website/index.js.下载"></script>
+    
 
-    <style>
-        .header-image {
-            width: 60px;
-            /* Adjust the width as needed */
-            height: auto;
-            /* Keeps the aspect ratio intact */
-        }
-
-
-        .navbar-fixed-top {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        body {
-            padding-top: 70px;
-        }
-
-        :target {
-            padding-top: 70px;
-            margin-top: -70px;
-        }
-
-
-        ul.nav a:hover {
-            color: rgb(255, 249, 239) !important;
-            /* White color on hover */
-        }
-
-        .nav.navbar-nav li a:hover {
-            background-color: rgb(82, 127, 159) !important;
-        }
-    </style>
-
-    <style>
-        #highlight {
-            color: rgb(212, 67, 54);
-        }
-    </style>
-
-
-    <style>
-        #controlsContainer1,
-        #controlsContainer2,
-        #controlsContainer3,
-        #controlsContainer4 {
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            background-color: rgb(66, 133, 244);
-            padding: 7px;
-            border-radius: 5px;
-            margin-bottom: 2px;
-        }
-
-        #exampleSelector1 option,
-        #exampleSelector2 option,
-        #exampleSelector3 option,
-        #exampleSelector4 option {
-            color: black;
-        }
-
-        #exampleSelectorContainer1 label,
-        #exampleSelectorContainer2 label,
-        #exampleSelectorContainer3 label,
-        #exampleSelectorContainer4 label {
-            margin: 3px;
-            color: white;
-        }
-
-        #outputContainer1,
-        #outputContainer2,
-        #outputContainer3,
-        #outputContainer4 {
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            width: 100%;
-            /* or any value according to your need */
-            margin: auto;
-            /* Center the container */
-        }
-
-        .chatbotOutput {
-            flex: 1;
-            /* Make both chatbot windows take equal width */
-            max-width: calc(100% - 1px);
-            /* Subtract the margin */
-            position: relative;
-            border: 1px solid black;
-            background-color: #dee1e5;
-            /* Background color for the header */
-            margin: 2px auto;
-            width: 100%;
-            /* Adjust as needed */
-            padding: 2px;
-            box-sizing: border-box;
-            border-radius: 5px;
-            /* Optional for rounded corners */
-        }
-
-        .chatbotHeader {
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            background-color: #dee1e5;
-            padding: 5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            min-height: 30px;
-            /* Adjusted the minimum height */
-        }
-
-        .chatbotHeader span {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 80%;
-            /* Adjusted the max-width */
-            display: inline-block;
-            flex-shrink: 0;
-            /* Added to prevent shrinking */
-        }
-
-        /* Adjust font size on smaller screens */
-        @media (max-width: 600px) {
-            .chatbotHeader span {
-                font-size: 10px;
-                /* Adjusted the font size */
-                max-width: 50%;
-                /* Adjusted the max-width */
-            }
-        }
-
-        .chatbotHeader img {
-            height: 30px;
-            width: auto;
-            margin-right: 10px;
-            flex-shrink: 0;
-            /* Added to prevent shrinking */
-        }
-
-
-        .output-container {
-            background-color: white;
-            height: 700px;
-            overflow-y: auto;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            /* Align items to the right */
-            word-wrap: break-word;
-        }
-    </style>
-
-    <style>
-        .userMessage {
-            background-color: #5e96fc;
-            color: white;
-            max-width: 80%;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 10px;
-            align-self: flex-end;
-            /* Adjust the alignment of the userMessage */
-        }
-
-        .persuasionMessage {
-            background-color: #e7ad56;
-            color: white;
-            max-width: 80%;
-            border-radius: 10px;
-            margin: 20px 10px -18px;
-            padding: 10px;
-            align-self: flex-start;
-            /* Adjust the alignment of the userMessage */
-        }
-
-        .assistantMessage {
-            background-color: #f4f4f4;
-            color: black;
-            max-width: 80%;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 10px;
-            align-self: flex-start;
-            /* Adjust the alignment of the assistantMessage */
-        }
-
-        .systemMessage {
-            background-color: rgba(65, 255, 115, 0.255);
-            color: black;
-            max-width: 70%;
-            border-radius: 10px;
-            margin: -30px 10px -18px;
-            padding: 10px;
-            align-self: flex-start;
-            /* Adjust the alignment of the assistantMessage */
-        }
-
-        .userMessage,
-        .assistantMessage {
-            white-space: pre-wrap;
-        }
-
-        .divider {
-            border-top: 4px dashed rgb(212, 67, 54);
-            margin: 10px 0;
-            padding: 0;
-            width: 90%;
-            align-self: center;
-            text-align: center;
-            position: relative;
-
-        }
-
-        .divider-text {
-
-            position: relative;
-            top: -15px;
-            background-color: white;
-            padding: 0 10px;
-        }
-
-
-        .text-image {
-            display: inline-block;
-            margin-left: 10px;
-            height: 30px;
-            width: auto;
-
-        }
-
-        .red-text {
-            color: red;
-        }
-    </style>
     <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
         modelIcons = {
         "GPT-4o": "./website/images/ChatGPT_logo.png",
         "Llama-3-8B": "./website/images/Llama2_logo.png",
@@ -1352,86 +626,19 @@
                     <h2 class="title is-3">Oversimplified Overview</h2>
                     <div class="content has-text-justified">
                         <p>
-                            <b>This project is about how to systematically persuade LLMs to jailbreak them. </b>The
-                            well-known
-                            <a href="https://www.reddit.com/r/ChatGPT/comments/12sn0kk/grandma_exploit/">"Grandma
-                                Exploit" example</a>
-                            is also using emotional appeal, a persuasion technique, for jailbreak!
+                            <b>This project introduces WOKEYTALKY, an automated pipeline that dynamically generates false refusal benchmarks from any given red-teaming dataset.</b> The rapid progress of foundation models has amplified AI safety risks, prompting the development of alignment techniques like reinforcement learning with human feedback (RLHF) and supervised safety fine-tuning. However, these safety mechanisms can inadvertently cause models to reject benign requests that contain keywords or syntax linked to unsafe content in training data, leading to incorrect safety refusals.
                             <br><br>
-
-                            <b>What did we introduce?</b> A taxonomy with 40 persuasion techniques to help you be more
-                            persuasive!<br><br>
-
-                            <b>What did we find?</b> By iteratively applying diffrent persuasion techniques in our
-                            taxonomy, we
-                            successfully jailbreak advanced aligned LLMs, including Llama 2-7b
-                            Chat, GPT-3.5, and GPT-4 — achieving an astonishing <b><i>92%</i></b> attack success rate,
-                            notably
-                            <b>without any
-                                specified optimization</b>.
-                            <!-- <span style="font-size: 11px; color: black"><i>(this uses a
-                            persuasion
-                            technique
-                            called
-                            "logical appeal")</i></span>. -->
+                            <b>What did we introduce?</b> WOKEYTALKY, an automated pipeline that takes as input an arbitrarily given red-teaming dataset and generates instances that lead to potential incorrect refusals.
                             <br><br>
-
-                            Now, you might think that such a high success rate is the peak of our findings, but there's
-                            more.
-                            <!-- <span
-                            style="font-size: 11px; color: black"><i>(this is a
-                            persuasion
-                            technique
-                            called
-                            "door in the face")</i></span>.  -->
-                            In a
-                            surprising twist, we found that <b>more advanced models like GPT-4 are more vulnerable</b>
-                            to persuasive
-                            adversarial prompts (PAPs).
-                            What's more, <b>adaptive defenses</b> crafted to
-                            neutralize these PAPs also provide effective protection against a
-                            spectrum of
-                            other attacks (e.g., <a href="https://llm-attacks.org/">GCG</a>, <a
-                                href="https://sites.google.com/view/ndss-masterkey">Masterkey</a>, or <a
-                                href="https://jailbreaking-llms.github.io/">PAIR</a>).<br><br>
-
-                            <i>P.S.: Did you notice any persuasion techniques used in the two paragraphs above?
-                                <ul>
-                                    <li>"achieving an astonishing <b><i>92%</i></b> success rate": this uses a
-                                        persuasion
-                                        technique
-                                        called
-                                        "logical appeal"
-                                        <!-- <span
-                                        style="font-size: 11px; color: black"><i>(this uses a
-                                        persuasion
-                                        technique
-                                        called
-                                        "logical appeal")</i></span> -->
-                                    </li>
-                                    <li>"Now, you might think that such a high success rate is the peak of our findings,
-                                        but there's
-                                        more": this is a
-                                        persuasion
-                                        technique
-                                        called
-                                        "door in the face"
-                                        <!-- <span style="font-size: 11px; color: black"><i>(this is a
-                                        persuasion
-                                        technique
-                                        called
-                                        "door in the face")</i></span> -->
-                                    </li>
-                                </ul>
-                                Congratulations!
-                                You've just finished Persuasion 101 and tasted the flavor of persuasion — didn't that
-                                "Door-in-the-face"
-                                technique give you a
-                                little surprise?
-
-                                The following are the results and insights we learned from using these
-                                persuasion techniques to test the safety alignment of LLMs.
-                            </i>
+                            <b>What did we find?</b> Our evaluation across 29 models demonstrates the widespread issue of incorrect refusals in existing LLMs and identifies spurious features that trigger these behaviors. Some key findings include:
+                            <ul>
+                                <li>Over-cautious behaviors are pervasive across diverse LLMs, even the most capable ones.</li>
+                                <li>Some spurious safety features are surprisingly robust, leading to high-confidence rejections even when embedded within random contexts.</li>
+                                <li>WOKEYTALKY enables more comprehensive evaluations compared to static benchmarks, revealing that static benchmarks significantly underestimate over-cautiousness.</li>
+                                <li>Dynamic benchmarks uniquely enable few-shot mitigation of incorrect refusals, providing more effective mitigation compared to using larger benign chat data.</li>
+                            </ul>
+                            <br>
+                            <i>The following are the results and insights we learned from using WOKEYTALKY to assess the over-cautiousness of safety-aligned LLMs.</i>
                         </p>
                     </div>
                 </div>
@@ -1440,19 +647,21 @@
             <div class="columns is-centered has-text-centered">
                 <div class="container is-max-desktop">
                     <div>
-                        <img src="./website/images/problem.png" alt="" style="width:100%;height:100%;"
-                            class="center">
+                        <img src="./website/images/problem.png" alt="" style="width:100%;height:100%;" class="center">
                     </div>
                     <div class="content has-text-justified">
                         <p>
                             <br>
-                            <span style="font-weight: bold; font-size: larger;">The problem of misguided safety refusal: (\textcolor{blue}{a}) Correct safety refusal based on harmful intent; (\textcolor{blue}{b}) Incorrect safety refusal triggered by spurious safety features.
+                            <span style="font-size: larger;">The image illustrates the problem of misguided safety refusals in language models. It contrasts two scenarios:
+                                (a) Ideal Safety Alignment with Casual Correlated Refusal: The model correctly refuses a user instruction that advocates physical or psychological harm based on the underlying harmful intent and context.
+                                (b) Over-conservative Safety with Spurious Correlated Refusal: The model incorrectly refuses a benign user instruction about preparing a spicy dish due to the presence of spurious safety features (keywords and syntax) that are falsely correlated with harmful content, despite the lack of actual harmful intent.</span>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
 
 
@@ -1473,53 +682,30 @@
                             </div>
                             <div class="content has-text-justified">
                                 <p>
-                                    <br>
-                                    <span style="font-weight: bold; font-size: larger;">Figure 2. </span>
-                                    <b>Broad scan results</b> on GPT-3.5 over <a
-                                        href="https://openai.com/policies/usage-policies">OpenAI's 14 risk
-                                        categories</a>. We show the
-                                    <b><i>PAP Success
-                                            Ratio</i></b> (%), the percentage of PAPs that elicit outputs with the
-                                    highest harmfulness score
-                                    of 5 judged by <a href="https://llm-tuning-safety.github.io/index.html">GPT-4
-                                        Judge</a>.
-                                    Each cell is a risk-technique pair, and the total number of PAPs for each cell is 60
-                                    (3 plain queries &times; 20 PAP variants).
-                                    The top 5 most effective techniques for each risk category are annotated in red or
-                                    white (results over
-                                    30% are emphasized in white). For clarity, risk categories and techniques are
-                                    organized from <b>left
-                                        to right, top to bottom</b> by decreasing the average <i>PAP Success Ratio</i>.
-                                    Left categories
-                                    (e.g., Fraud/deception) are more susceptible to persuasion, and top techniques
-                                    (e.g., Logical Appeal)
-                                    are more effective. The bottom row shows the results of plain queries without
-                                    persuasion.
+                                    <span style="font-weight: bold; font-size: larger;">Figures 3 & 4. </span>
+                                    <b>WOKEYTALKY Arena Results</b> illustrate the effectiveness of various models in identifying high-confidence safety-rejected seeds and the prevalence of spurious refusals. 
+                            
+                                    Figure 3 uses HEx-PHI data, showing that the llama-2 models, especially with enhanced safety prompts, have higher incorrect refusal rates. The most effective models for seed selection are mistral-7b-v0.1-guard and zephyr-7b-beta, which identify seeds leading to frequent refusals.
+                            
+                                    Figure 4, using AdvBench data, reveals similar trends. The mistral-7b models are particularly adept at pinpointing potent seeds, highlighting a potential bias towards spurious features. The x-axis more clearly shows that less safety-aligned models have lower refusal rates for harmful prompts compared to llama-2 models.
                                 </p>
                             </div>
 
                             <div class="content has-text-justified">
                                 <h2 class="title is-4">Scalable applications of WokeyTalky in prompt awareness</h2>
                                 <p>
-                                    We find persuasion effectively jailbreaks GPT-3.5 across all 14 risk categories.
-                                    The interplay between risk categories and persuasion techniques highlights the
-                                    challenges in
-                                    addressing such user-invoked risks from persuasion.
-                                    This risk, especially when involving multi-technique and multi-turn communication,
-                                    emphasizes the
-                                    urgency for further investigation.
+                                    The WOKEYTALKY pipeline offers robust solutions for identifying and mitigating incorrect refusals in AI models. By leveraging dynamically generated data, WOKEYTALKY provides timely insights into safety mechanism-dependent refusals, effectively addressing user-invoked risks from persuasion techniques across various risk categories. This adaptive approach highlights the necessity for continuous investigation, especially in complex, multi-technique, and multi-turn communication scenarios.
                                 </p>
+                                <p>
+                                    In the following case studies, we explore the practical applications of WOKEYTALKY in real-world settings. Case Study 1 demonstrates how WOKEYTALKY data can be used to fine-tune models, improving their safety and reducing incorrect refusals. Case Study 2 focuses on the few-shot mitigation of incorrect refusals, showing the effectiveness of WOKEYTALKY samples in balancing performance and safety in AI models.
+                                </p>
+                                    
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         <br>
-            <!-- <div class="columns is-centered">
-        <div class="container is-max-desktop">
-          <h2 class="title is-4">In-depth Iterative Probe</h2>
-        </div>
-      </div> -->
 
             <div class="columns is-centered">
                 <!-- Belief Qs. -->
@@ -1528,31 +714,16 @@
                         <h2 class="title is-4">Case Study 1</h2>
                         <div class="content has-text-justified">
                             <p>
-                                In real-world jailbreaks, users will refine effective prompts to improve the jailbreak
-                                process.
-                                To mimic human refinement behavior, we train on successful PAPs and iteratively deploy
-                                different
-                                persuasion techniques.
-                                Doing so jailbreaks popular aligned LLMs, such as Llama-2 and GPT models, <b>much more
-                                    effectively than
-                                    existing algorithm-focused attacks</b>.
-                                The table below shows the comparison of ASR across various jailbreak methods (<a
-                                    href="https://arxiv.org/pdf/2310.08419.pdf" style="color:rgb(0, 115, 255)">PAIR</a>,
-                                <a href="https://arxiv.org/pdf/2307.15043.pdf" style="color:rgb(0, 115, 255)">GCG</a>,
-                                <a href="https://arxiv.org/pdf/2303.04381.pdf" style="color:rgb(0, 115, 255)">ARCA</a>,
-                                <a href="https://arxiv.org/pdf/2104.13733.pdf" style="color:rgb(0, 115, 255)">GBDA</a>)
-                                based on results
-                                ensembled from at least 3 trials.
-                                PAP is more effective than baseline attacks.
+                                The adaptive nature of WOKEYTALKY enables exciting new use cases and functionalities beyond serving as a static benchmark. Through this case study, we demonstrate that dynamically generated “Woke” data from WOKEYTALKY provides timely identification of safety mechanism-dependent incorrect refusals. We fine-tuned a helpfulness-focused model, Mistral-7B-v0.1, on 50 random samples from AdvBench, introducing safety refusal behaviors. The evaluation compared the model’s safety on AdvBench samples and incorrect refusal rate on WOKEYTALKY data versus static benchmarks like XSTest.
                             </p>
                         </div>
                         <br>
-                        <img src="./website/images/Case1.png" alt="">
+                        <img src="./website/images/Case1.png" alt="Case Study 1 Image">
                     </div>
                 </div>
             </div>
             <br>
-
+            
             <div class="columns is-centered">
                 <!-- Belief Qs. -->
                 <div class="column">
@@ -1560,28 +731,10 @@
                         <h3 class="title is-4">Case Study 2</h3>
                         <div class="content has-text-justified">
                             <p>
-                                We revisit a list of post-hoc adversarial prompt defense strategies (<a
-                                    href="https://arxiv.org/pdf/2309.00614.pdf">Rephrase, Retokenize</a>, <a
-                                    href="https://arxiv.org/pdf/2309.14348.pdf">Rand-Drop</a>, <a
-                                    href="https://arxiv.org/pdf/2309.07124.pdf">RAIN</a>, <a
-                                    href="https://arxiv.org/pdf/2310.03684.pdf">Rand-Insert, Rand-Swap, and
-                                    Rand-Patch</a>). The table
-                                below shows the ASR and how much the defense can reduce the ASR.
-                                Overall, mutation-based methods outperform detection-based methods in lowering ASR.
-                                We observe the interesting trend that the <b>more advanced the models are, the less
-                                    effective current
-                                    defenses are</b>, possibly because advanced models grasp
-                                context better, making mutation-based defenses less useful. Notably, <b>even the most
-                                    effective defense
-                                    can only reduce ASR on GPT-4 to 60%, which is still higher
-                                    than the best baseline attack (54%)</b>. This strengthens the need for improved
-                                defenses for more
-                                capable models.
+                                In this case study, we explore using WOKEYTALKY data for few-shot mitigation of incorrect refusals. We split the WOKEYTALKY and XSTest-63 data into train/test sets and compared different fine-tuning methods. Our findings show that incorporating WOKEYTALKY samples effectively mitigates wrong refusals while maintaining high safety refusal rates. Model 1, using WOKEYTALKY data, demonstrated generalizable mitigation on unseen data, outperforming models trained with larger benign QA samples or XSTest samples. This highlights the potential of WOKEYTALKY data in balancing performance, safety, and incorrect refusals in AI safety applications.
                             </p>
-
                         </div>
-
-                        <img src="./website/images/Case2.png" style="width:95%;height:95%;" alt="">
+                        <img src="./website/images/Case2.png" style="width:95%;height:95%;" alt="Case Study 2 Image">
                     </div>
                 </div>
             </div>
@@ -1594,7 +747,7 @@
 
     <section class="section" id="examples">
         <!-- Benchmark design. -->
-
+    
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="container is-max-desktop">
@@ -1602,29 +755,22 @@
                     
                     <div class="content has-text-justified">
                         <p>
-                            Here are qualitative examples from our WokeyTalky process.<br>
-
+                            Here are qualitative examples from our WOKEYTALKY process.<br>
+                            These examples illustrate how the WOKEYTALKY pipeline generates prompts to identify and analyze incorrect refusals in AI models. By examining both benign and harmful instructions, we can better understand the triggers of spurious refusals and develop more effective safety mechanisms.
                         </p>
                     </div>
                 </div>
             </div>
-
+    
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column is-full-width">
                         <h4 class="title is-4"> ADV Bench</h4>
                     </div>
-                    
                 </div>
-                <!-- <div>
-                    <img src="./website/images/wokey_adv_QA_2.png" alt=""
-                        style="width:80%;height:80%;" class="center">
-                    <img src="./website/images/wokey_hex_QA_8.png" alt=""
-                        style="width:80%;height:80%;" class="center">
-                </div> -->
                 <p>
-                    We show examples of WokeyTalky generated prompts in action.
-
+                    We show examples of WOKEYTALKY generated prompts in action.
+                    These examples from the AdvBench dataset demonstrate how our pipeline identifies spurious refusal patterns. Each selected prompt illustrates a scenario where the model incorrectly refuses a benign query due to spurious correlations with harmful content in the training data.
                 </p>
             
                 <div id="outputAndControlsContainer1">
@@ -1632,9 +778,9 @@
                         <div>
                             <select id="responseOption" onchange="displayResponses(this.value, 'modelOutput1', advDisplayOptions)">
                                 <option value="" disabled selected>Please click to select</option>
-                                <option value="1">WokeyTalky ADV-Bench #1</option>
-                                <option value="2">WokeyTalky ADV-Bench #2</option>
-                                <option value="3">WokeyTalky ADV-Bench #3</option>
+                                <option value="1">WOKEYTALKY ADV-Bench #1</option>
+                                <option value="2">WOKEYTALKY ADV-Bench #2</option>
+                                <option value="3">WOKEYTALKY ADV-Bench #3</option>
                             </select>
                         </div>
                     </div>
@@ -1650,7 +796,7 @@
             </div>  
             
             <br>
-
+    
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column is-full-width">
@@ -1658,7 +804,8 @@
                     </div>
                 </div>
                 <p>
-                    [Blank]
+                    Here are examples from the HEx-PHI dataset, showcasing different categories of refusals.
+                    These examples illustrate various refusal strategies employed by models when faced with potentially harmful instructions. By analyzing these responses, we gain insights into the models' safety mechanisms and their effectiveness in different contexts.
                 </p>
                 <br>
                 <div id="outputAndControlsContainer1">
@@ -1666,18 +813,18 @@
                         <div>
                             <select id="responseOption" onchange="displayResponses(this.value, 'modelOutput2', hexDisplayOptions)">
                                 <option value="" disabled selected>Please click to select</option>
-                                <option value="1">HEx-PHI Category 1: Illegal Activites</option>
-                                <option value="2">HEx-PHI Category 2: Honest and direct</option>
-                                <option value="3">HEx-PHI Category 3: Refusal on ethical grounds</option>
-                                <option value="4">HEx-PHI Category 4: Refusal on safety grounds</option>
-                                <option value="5">HEx-PHI Category 5: Refusal due to info hazard</option>
-                                <option value="6">HEx-PHI Category 6: Filtering or avoiding specifics</option>
-                                <option value="7">HEx-PHI Category 7: Refusal to assist with unethical acts</option>
-                                <option value="8">HEx-PHI Category 8: Provides relevant factual info only</option>
-                                <option value="9">HEx-PHI Category 9: Refusal due to potential for misuse</option>
-                                <option value="10">HEx-PHI Category 10: Careful consideration of risks and benefits</option>
-                                <option value="11">HEx-PHI Category 11: Conditional assistance with safeguards</option>
-                              </select>
+                                <option value="1">HEx-PHI Category 1: Illegal Activities</option>
+                                <option value="2">HEx-PHI Category 2: Honest and Direct</option>
+                                <option value="3">HEx-PHI Category 3: Refusal on Ethical Grounds</option>
+                                <option value="4">HEx-PHI Category 4: Refusal on Safety Grounds</option>
+                                <option value="5">HEx-PHI Category 5: Refusal due to Info Hazard</option>
+                                <option value="6">HEx-PHI Category 6: Filtering or Avoiding Specifics</option>
+                                <option value="7">HEx-PHI Category 7: Refusal to Assist with Unethical Acts</option>
+                                <option value="8">HEx-PHI Category 8: Provides Relevant Factual Info Only</option>
+                                <option value="9">HEx-PHI Category 9: Refusal due to Potential for Misuse</option>
+                                <option value="10">HEx-PHI Category 10: Careful Consideration of Risks and Benefits</option>
+                                <option value="11">HEx-PHI Category 11: Conditional Assistance with Safeguards</option>
+                            </select>
                         </div>
                     </div>
                     <div id="outputContainer1">
@@ -1688,22 +835,6 @@
                             <div id="modelOutput2" class="output-container"></div>
                         </div>
                     </div>
-                
-                    <!-- <div id="outputContainer4">
-                        <div id="chatbot4" class="chatbotOutput">
-                            <div class="chatbotHeader">
-                                <img src="./website/images/ChatGPT_logo.png" alt="ChatGPT Icon">
-                                <span style="font-weight: bold; font-size: larger;">ChatGPT&emsp;</span>
-                                <img src="./website/images/gpt4_logo.png" alt="GPT4 Icon">
-                                <span style="font-weight: bold; font-size: larger;">GPT4&emsp;</span>
-                                <img src="./website/images/claude1_logo.png" alt="Claude1 Icon">
-                                <span style="font-weight: bold; font-size: larger;">Claude1&emsp;</span>
-                                <img src="./website/images/claude1_logo.png" alt="Claude1 Icon">
-                                <span style="font-weight: bold; font-size: larger;">Claude2</span>
-                            </div>
-                            <div id="modelOutput4" class="output-container"></div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -1720,7 +851,16 @@
                     <h2 class="title is-3">Ethics and Disclosure</h2>
                     <div class="content has-text-justified">
                         <p>
-                            [Blank in progress]
+                            The development and application of WOKEYTALKY have been guided by a commitment to ethical standards and transparency. The pipeline's primary aim is to enhance the safety and reliability of AI systems by addressing the issue of incorrect refusals and improving model alignment with human values. We acknowledge the potential implications of our work in various domains and have taken measures to ensure that our research is conducted responsibly.
+                        </p>
+                        <p>
+                            Our methodology includes the use of red-teaming datasets specifically designed to expose and mitigate safety risks. These datasets, such as HEx-PHI and AdvBench, are employed with the intention of identifying and correcting spurious features that lead to misguided refusals in language models. All data used in our experiments is sourced from publicly available benchmarks, and no private or sensitive data is included.
+                        </p>
+                        <p>
+                            We recognize that the dynamic generation of test cases (Woke-data) and the evaluation of models on these cases can raise concerns about the potential misuse of our findings. To mitigate such risks, we have ensured that all experimental procedures and results are documented transparently, and our code and methodologies are made available for peer review and verification. We encourage collaboration and open dialogue within the research community to refine and improve our approaches.
+                        </p>
+                        <p>
+                            In addition, we are committed to the principles of fairness, accountability, and transparency. Our evaluations aim to highlight the importance of context-aware AI systems that can distinguish between harmful and benign requests accurately. We stress that our work should not be used to bypass or undermine safety mechanisms but rather to strengthen them.
                         </p>
                     </div>
                 </div>
@@ -1762,30 +902,5 @@
     </footer>
 </body>
 
-<grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
-        <style>
-            div.grammarly-desktop-integration {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border: 0;
-                -moz-user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
 
-            div.grammarly-desktop-integration:before {
-                content: attr(data-content);
-            }
-        </style>
-        <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
-            data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
-        </div>
-    </template></grammarly-desktop-integration>
 </html>
