@@ -113,7 +113,7 @@ Now, you might think that such a high success rate is the peak of our findings, 
 
 <br>
 
-### **Case Study I**
+
 
 <div class="columns is-centered">
     <div class="column">
@@ -131,7 +131,6 @@ Now, you might think that such a high success rate is the peak of our findings, 
 </div>
 <br>
 
-### **Case Study II**
 
 <div class="columns is-centered">
     <div class="column">
