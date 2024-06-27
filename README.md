@@ -38,7 +38,7 @@ Check out four notebook demos below.
 
 ------------
 ## Quickstart
-### Install (Option #1)
+### ~~Install (Option #1)~~  Under Development (TBD)
 
 To quickly use WokeyTalky in a notebook or python code, you can install our Pipeline with `pip`:
 
@@ -46,9 +46,15 @@ To quickly use WokeyTalky in a notebook or python code, you can install our Pipe
 pip install WokeyTalky
 ```
 
-Further documentation
+```python
+from WokeyTalky import WokePipeline
 
-### Use our original code
+woke = WokePipeline()
+```
+
+Further documentation [Here](https://LINK)
+
+### Use our original code (Option #2)
 
 Go step by step through our WokeyTalky process with the original code used to generate our HuggingFace dataset
 Clone or download this repository:
@@ -68,9 +74,6 @@ Then run WokeyTalky's main bash script:
 ```bash
 ./start_pipeline.sh
 ```
-
-
-
 
 <br>
 <br>
