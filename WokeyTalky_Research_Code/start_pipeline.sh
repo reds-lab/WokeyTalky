@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# Use the home folder for non-conflicting operations
+# main configuration
+dataset_file="$(pwd)/data/0_top_10p_wokey/adv_63.json"
+out_file="$(pwd)/output/static_woke_adv_63"
+
+# Environment Configs
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"
+export CUDA_VISIBLE_DEVICES="0,1"
 export RAY_TMPDIR="$HOME/tmp_ray"
 mkdir -p "$RAY_TMPDIR"
 
-# Set the default values for the arguments
-dataset_file="$(pwd)/0_datasets/0_top_10p_wokey/adv_63.json"
-out_file="$(pwd)/0_outputs/static_woke_adv_63"
+#Pipeline configs
 models_list_dir="$(pwd)/configs/models.txt"
 judge_templates_file="$(pwd)/configs/judge_prompt.jsonl"
 woke_templates_file="$(pwd)/configs/woke_templates.json"
