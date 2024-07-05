@@ -6,6 +6,7 @@ from utils.eval_util import load_prompt_format
 import argparse
 from utils.progress_util import progress_bar
 from utils.gpt_batch_request import save_requests_to_file,upload_file_to_openai,create_batch,retrieve_batch,get_file_content,parse_multiple_json_objects,save_as_jsonl,confirm_action
+
 def process_json_files(input_dir, judge_prompt_filename):
     requests = []
     file_names = [f for f in os.listdir(input_dir) if f.endswith('.json')]

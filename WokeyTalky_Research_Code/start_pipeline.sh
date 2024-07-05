@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # main configuration
-dataset_file="$(pwd)/data/0_top_10p_wokey/adv_63.json"
-out_file="$(pwd)/output/static_woke_adv_63"
+dataset_file="$(pwd)/data/HEx-PHI/category_1.csv"
+project_name="Demo"
+out_file="$(pwd)/out/$project_name"
 
 # Environment Configs
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
@@ -11,7 +12,7 @@ export RAY_TMPDIR="$HOME/tmp_ray"
 mkdir -p "$RAY_TMPDIR"
 
 #Pipeline configs
-models_list_dir="$(pwd)/configs/models.txt"
+models_list_dir="$(pwd)/configs/open_models.txt"
 judge_templates_file="$(pwd)/configs/judge_prompt.jsonl"
 woke_templates_file="$(pwd)/configs/woke_templates.json"
 scripts_dir="$(pwd)/scripts"
