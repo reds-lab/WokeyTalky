@@ -79,17 +79,12 @@ To go step by step through our WokeyTalky process using the original code that g
 
 5. **Further Documentation:**
    Reference to additional documentation within the repository:
-   ```markdown
-   For more detailed instructions and further documentation, please refer to the [documentation folder](./docs/README.md) inside the repository.
+
+   For more detailed instructions and further documentation, please refer to the [documentation folder](./WokeyTalky_Research_Code/README.md) inside the repository.
 ## Introduction
 
 **TL;DR:** WokeyTalky is a scalable pipeline that generates test data to evaluate the spurious correlated safety refusal of foundation models through a systematic approach.
 
-**What did we introduce?** A taxonomy with 40 persuasion techniques to help enhance persuasion skills.
-
-**What did we find?** By iteratively applying different persuasion techniques from our taxonomy, we successfully jailbreak advanced aligned LLMs, including Llama 2-7b Chat, GPT-3.5, and GPT-4, achieving a 92% attack success rate, notably without any specified optimization.
-
-Interestingly, we found that advanced models like GPT-4 are more vulnerable to persuasive adversarial prompts (PAPs). Adaptive defenses crafted to neutralize these PAPs also provide effective protection against a spectrum of other attacks (e.g., [GCG](https://llm-attacks.org/), [Masterkey](https://sites.google.com/view/ndss-masterkey), or [PAIR](https://jailbreaking-llms.github.io/)).
 
 ## A Quick Glance
 <img src="./assets/0evQd-adv-bench-rejection-rates.png" alt="Rejection Rates" width="90%"/>
