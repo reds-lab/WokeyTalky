@@ -1,11 +1,17 @@
 import json
+import asyncio
+import aiohttp
 from dotenv import load_dotenv
 import os
 load_dotenv()
 from utils.eval_util import load_prompt_format
 import argparse
 from utils.progress_util import progress_bar
-from utils.gpt_batch_request import save_requests_to_file,upload_file_to_openai,create_batch,retrieve_batch,get_file_content,parse_multiple_json_objects,save_as_jsonl,confirm_action
+from utils.gpt_batch_request import save_requests_to_file, upload_file_to_openai, create_batch, retrieve_batch, get_file_content, parse_multiple_json_objects, save_as_jsonl, confirm_action
+from openai import OpenAI
+
+def split_requests_into_chunks(requests, chunk_size):
+    return [requests[i:i + chunk_size] for i in range(0, len(requests), chunk_size)]
 
 def process_json_files(input_dir, judge_prompt_filename):
     requests = []
@@ -54,8 +60,33 @@ def process_json_files(input_dir, judge_prompt_filename):
 
     return requests
 
+async def send_batch_request(client, chunk, output_dir, i, api_safety_on):
+    save_requests_to_file(chunk, f'{output_dir}/batch_request_chunk_{i}.jsonl')
 
+    if api_safety_on and not confirm_action("Do you want to proceed with sending the request to OpenAI?"):
+        print("Request canceled.")
+        return None
 
+    _, response = upload_file_to_openai(f'{output_dir}/batch_request_chunk_{i}.jsonl', client.api_key)
+    batch = create_batch(client, response)
+
+    while True:
+        try:
+            retrieved_batch = retrieve_batch(client, batch.id)
+            if retrieved_batch.status == 'completed':
+                break
+            else:
+                raise Exception(f"Batch processing failed with status: {retrieved_batch.status}")
+        except Exception as e:
+            print(f"Error retrieving batch: {e}")
+            print(f"Batch {i}: Retrying in 30 seconds...\n")
+            await asyncio.sleep(30)
+
+    text_content = get_file_content(client, retrieved_batch)
+    if text_content:
+        parsed_objects = parse_multiple_json_objects(text_content)
+        return parsed_objects
+    return None
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -68,13 +99,16 @@ if __name__ == "__main__":
                         help='Path and name of the output file to save the requests.')
     parser.add_argument('--batch_name', type=str, default='batch_output',
                         help='Name of the batch output file.')
+    parser.add_argument('--api_safety_on', type=bool, default=True,
+                        help='Name of the batch output file.')
     args = parser.parse_args()
 
     input_dir = args.input_dir
     judge_prompt_filename = args.judge_prompt_filename
     output_dir = args.output_dir
     batch_name = args.batch_name
-
+    api_safety_on = args.api_safety_on
+    
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise ValueError(
@@ -106,7 +140,9 @@ if __name__ == "__main__":
                                 else:
                                     raise Exception(
                                         f"Batch processing failed with status: {retrieved_batch.status}")
+                                        
                             except Exception as e:
+                                print(retrieved_batch)
                                 print(f"Error retrieving batch: {e}")
                                 print("Retrying in 30 seconds...\n")
                                 progress_bar(30)
@@ -121,33 +157,22 @@ if __name__ == "__main__":
                     print("Invalid input. Please enter a valid number.")
 
     requests = process_json_files(input_dir, judge_prompt_filename)
-    save_requests_to_file(requests, f'{output_dir}/batch_request.jsonl')
+    request_chunks = split_requests_into_chunks(requests, 50000)
 
-    if not confirm_action("Do you want to proceed with sending the request to OpenAI?"):
-        print("Request canceled.")
-        exit(0)
+    async def main():
+        client = OpenAI(api_key=api_key)
+        tasks = []
+        for i, chunk in enumerate(request_chunks, start=1):
+            print(f"Processing chunk {i} of {len(request_chunks)}...")
+            task = asyncio.ensure_future(send_batch_request(client, chunk, output_dir, i, api_safety_on))
+            tasks.append(task)
 
-    client, response = upload_file_to_openai(
-        f'{output_dir}/batch_request.jsonl', api_key)
-    batch = create_batch(client, response)
+        all_parsed_objects = []
+        for task in asyncio.as_completed(tasks):
+            parsed_objects = await task
+            if parsed_objects:
+                all_parsed_objects.extend(parsed_objects)
 
-    with open(batch_ids_file, "a") as f:
-        f.write(json.dumps({"batch_id": batch.id}) + "\n")
+        save_as_jsonl(all_parsed_objects, f"{output_dir}/batch_raw_outputs.jsonl")
 
-    while True:
-        try:
-            retrieved_batch = retrieve_batch(client, batch.id)
-            if retrieved_batch.status == 'completed':
-                break
-            else:
-                raise Exception(
-                    f"Batch processing failed with status: {retrieved_batch.status}")
-        except Exception as e:
-            print(f"Error retrieving batch: {e}")
-            print("Retrying in 30 seconds...\n")
-            progress_bar(30)
-
-    text_content = get_file_content(client, retrieved_batch)
-    if text_content:
-        parsed_objects = parse_multiple_json_objects(text_content)
-        save_as_jsonl(parsed_objects, f"{output_dir}/batch_raw_outputs.jsonl")
+    asyncio.run(main())
